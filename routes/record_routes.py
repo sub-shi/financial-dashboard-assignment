@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, g
 from models.record import Record
 from database import db
 from utils.decorators import require_auth
@@ -28,7 +28,7 @@ def create_record():
         category=data.get("category", "general"),
         date=datetime.strptime(data.get("date"), "%Y-%m-%d") if data.get("date") else datetime.utcnow(),
         note=data.get("note"),
-        user_id=request.user["user_id"]              #FROM JWT PAYLOAD
+        user_id=g.user.id              #FROM JWT PAYLOAD
     )
 
     db.session.add(record)
