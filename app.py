@@ -28,7 +28,7 @@ def create_app():
                 db.session.add(Role(name=r))
         db.session.commit()
 
-    def seed_users():
+    def seed_users():                                                       
         admin_role = Role.query.filter_by(name="admin").first()
 
         if admin_role and not User.query.filter_by(email="admin@example.com").first():
