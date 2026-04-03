@@ -36,7 +36,7 @@ utils/      → Helpers, decorators, JWT logic
 - Each request is validated using a custom decorator
 - Each request is validated using a custom decorator
 
-# Role Permissions
+## Role Permissions
 Role	Permissions
 Admin	Full access (users, records, dashboard)
 Analyst	Read records + dashboard insights
@@ -56,7 +56,7 @@ Viewer	Dashboard access only
     - Category
     - Date
     - Notes
-# Supported Operations
+## Supported Operations
 - Create, update, delete records 
 - Filter by type, category, and date range
 
